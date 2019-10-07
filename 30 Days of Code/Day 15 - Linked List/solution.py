@@ -19,7 +19,7 @@ class Solution:
         # head의 next값이 None일 경우 next값 지정
         elif head.next is None:
             head.next = Node(data)
-        # head가 None아 아니고, next값이 None이 아닐경우 다음노드 탐색
+        # head가 None이 아니고, next값이 None이 아닐경우 다음노드 탐색
         else:
             self.insert(head.next, data)
 
