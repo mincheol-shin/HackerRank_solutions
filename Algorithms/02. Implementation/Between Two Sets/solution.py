@@ -1,10 +1,11 @@
 def getTotalX(a, b):
-    result = 0
-
+    total = 0
+    # Minimize iteration
     for i in range(min(a), min(b) + 1, min(a)):
         if all(i % a_element == 0 for a_element in a) and all(b_element % i == 0 for b_element in b):
-            result += 1
-    return result
+            total += 1
+    return total
+
 
 if __name__ == '__main__':
     n, m = map(int, input().split())
