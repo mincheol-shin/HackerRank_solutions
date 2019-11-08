@@ -1,18 +1,12 @@
 def getTotalX(a, b):
-    first_factor, second_factor = a
-    count = 0
-    for i in range(first_factor,b[0]+1, first_factor):
-        if i % first_factor == 0 and i % second_factor == 0:
-            for j in range(len(b)):
-                if b[j] % i == 0:
-                    if j == len(b) - 1:
-                        count += 1
-                else:
-                    break
+    result = 0
 
-    return count
+    for i in range(min(a), min(b) + 1, min(a)):
+        if all(i % a_element == 0 for a_element in a) and all(b_element % i == 0for b_element in b):
+            result += 1
+    return result
+
 if __name__ == '__main__':
-
     n, m = map(int, input().split())
     arr = list(map(int, input().split()))
     brr = list(map(int, input().split()))
